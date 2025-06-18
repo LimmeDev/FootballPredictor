@@ -51,6 +51,7 @@ if __name__ == "__main__":
         lambda_l2=0.2,
         num_threads=10,
         seed=42,
+        device_type="gpu",
     )
 
     print("[train_model] Training LightGBM …")
