@@ -35,7 +35,7 @@ N_THREADS = 10  # use all vCPUs of the VM
 def load_data():
     df = pd.read_parquet(DATA_FILE)
     y = df["Result"].astype(int).values
-    X = df.drop(columns=["Result", "Date"])
+    X = df.drop(columns=["Result", "Date", "HomeTeam", "AwayTeam"], errors="ignore")
     return X, y
 
 
@@ -46,7 +46,6 @@ def objective(trial: optuna.trial.Trial):
         "objective": "multiclass",
         "num_class": 3,
         "metric": "multi_logloss",
-        "device_type": "gpu",
         "learning_rate": trial.suggest_float("learning_rate", 0.01, 0.2, log=True),
         "num_leaves": trial.suggest_int("num_leaves", 64, 1024, step=64),
         "feature_fraction": trial.suggest_float("feature_fraction", 0.5, 1.0),
@@ -58,6 +57,9 @@ def objective(trial: optuna.trial.Trial):
         "seed": 42,
         "num_threads": N_THREADS,
         "device_type": "gpu",
+        "device": "gpu",
+        "gpu_platform_id": 0,
+        "gpu_device_id": 0,
     }
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -116,6 +118,9 @@ def main():
             "num_class": 3,
             "metric": "multi_logloss",
             "device_type": "gpu",
+            "device": "gpu",
+            "gpu_platform_id": 0,
+            "gpu_device_id": 0,
             "num_threads": N_THREADS,
             "seed": 42,
         }

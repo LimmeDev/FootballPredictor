@@ -26,7 +26,7 @@ if __name__ == "__main__":
     df = pd.read_parquet(DATA_FILE)
 
     print("[train_model] Splitting train/validation …")
-    X = df.drop(columns=["Result", "Date"])
+    X = df.drop(columns=["Result", "Date", "HomeTeam", "AwayTeam"], errors="ignore")
     y = df["Result"].astype(int)
 
     # Time-ordered split prevents look-ahead bias
@@ -52,6 +52,9 @@ if __name__ == "__main__":
         num_threads=10,
         seed=42,
         device_type="gpu",
+        device="gpu",
+        gpu_platform_id=0,
+        gpu_device_id=0,
     )
 
     print("[train_model] Training LightGBM …")

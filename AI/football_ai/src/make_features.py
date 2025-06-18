@@ -232,6 +232,14 @@ def build_feature_table() -> pd.DataFrame:
     if "SeasonEnd" in features.columns:
         features = features.drop(columns=["SeasonEnd"])
 
+    # ---------------------------------------------------------------
+    #  Persist team identifiers so downstream scripts (predict_match)
+    #  can reconstruct fixtures using only team names, without
+    #  re-engineering features.
+    # ---------------------------------------------------------------
+    keep_cols = feature_cols + ["Result", "Date", "HomeTeam", "AwayTeam"]
+    features = df[keep_cols]
+
     return features
 
 
