@@ -1,0 +1,7 @@
+# Project ignore rules
+.venv/
+__pycache__/
+AI/football_ai/data/raw/
+AI/football_ai/data/*.parquet
+AI/football_ai/models/*
+*.DS_Store
