@@ -44,7 +44,18 @@ def _run(cmd: list[str]):
 # -----------------------------------------------------------------------------
 
 def download_statsbomb() -> None:
-    """Clone or update the StatsBomb open-data repository."""
+    """Clone or update the StatsBomb open-data repository.
+
+    • Skip entirely if the environment variable ``SKIP_STATSBOMB`` is set to ``1``.
+    • Use Git's *partial clone* (`--filter=blob:none`) so only tree metadata is
+      downloaded (~60 MB) — individual JSON blobs are fetched lazily on first
+      access.  That avoids the long "compressing objects" phase on Colab.
+    """
+
+    if os.getenv("SKIP_STATSBOMB") == "1":
+        print("[statsbomb] SKIP_STATSBOMB=1 – skipping StatsBomb download")
+        return
+
     repo_url = "https://github.com/statsbomb/open-data.git"
     dst = RAW_DIR / "statsbomb"
 
@@ -52,8 +63,15 @@ def download_statsbomb() -> None:
         print("[statsbomb] Repository already exists – pulling latest commits …")
         _run(["git", "-C", str(dst), "pull", "--ff-only"])
     else:
-        print("[statsbomb] Cloning repository … (~200 MB on first run)")
-        _run(["git", "clone", "--depth", "1", repo_url, str(dst)])
+        print("[statsbomb] Cloning repository (partial, ~60 MB) …")
+        _run([
+            "git",
+            "clone",
+            "--depth", "1",
+            "--filter=blob:none",  # lazy-fetch large JSON blobs later
+            repo_url,
+            str(dst),
+        ])
 
 
 def download_538() -> None:
