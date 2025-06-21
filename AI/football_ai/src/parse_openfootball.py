@@ -213,7 +213,7 @@ def _add_derived_features(df: pd.DataFrame) -> pd.DataFrame:
     df['Competitive'] = (abs(df['Goal_Difference']) <= 1).astype(int)
     
     # Season progress (approximate)
-    df['Season_Progress'] = df.groupby(['League', 'Season']).cumcount() / df.groupby(['League', 'Season']).size()
+    df['Season_Progress'] = df.groupby(['League', 'Season']).cumcount() / df.groupby(['League', 'Season']).transform('size')
     
     return df
 
