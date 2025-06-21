@@ -24,7 +24,6 @@ warnings.filterwarnings('ignore')
 
 # Import parsers
 from parse_openfootball import main as parse_openfootball
-from parse_statsbomb import main as parse_statsbomb_fallback
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = PROJECT_ROOT / "data" / "raw"
