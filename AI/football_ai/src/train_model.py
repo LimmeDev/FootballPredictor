@@ -31,7 +31,7 @@ from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATA_FILE = PROJECT_ROOT / "data" / "training_features.parquet"
+DATA_FILE = PROJECT_ROOT / "data" / "combined_features.parquet"
 MODEL_DIR = PROJECT_ROOT / "models"
 MODEL_DIR.mkdir(exist_ok=True)
 MODEL_PATH = MODEL_DIR / "football_predictor.json"
