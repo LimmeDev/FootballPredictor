@@ -1,0 +1,20 @@
+{
+  "total_matches": 7146,
+  "total_columns": 211,
+  "estimated_ml_features": 192,
+  "feature_categories": {
+    "ELO": 12,
+    "Positional": 31,
+    "Team_Composition": 45,
+    "Advanced_Stats": 22,
+    "Situational": 24,
+    "Psychological": 15,
+    "Financial": 12,
+    "Interactions": 11
+  },
+  "target_distribution": {
+    "H": 3143,
+    "A": 2228,
+    "D": 1775
+  }
+}

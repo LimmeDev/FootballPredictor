@@ -1,0 +1,55 @@
+{
+  "total_matches": 7146,
+  "features": [
+    "Date",
+    "HomeTeam",
+    "AwayTeam",
+    "League",
+    "Country",
+    "Season",
+    "Round",
+    "Home_Goals",
+    "Away_Goals",
+    "Result",
+    "Home_HT_Goals",
+    "Away_HT_Goals",
+    "Home_xG_Est",
+    "Away_xG_Est",
+    "Source",
+    "MatchID",
+    "Goal_Difference",
+    "Total_Goals",
+    "High_Scoring",
+    "Low_Scoring",
+    "Home_Win_Margin",
+    "Away_Win_Margin",
+    "Competitive",
+    "Season_Progress",
+    "Result_Encoded",
+    "HomeTeam_Encoded",
+    "AwayTeam_Encoded",
+    "League_Encoded",
+    "Year",
+    "Month",
+    "Day_of_Week"
+  ],
+  "feature_count": 31,
+  "leagues": [
+    "Bundesliga",
+    "Ligue 1",
+    "Eredivisie",
+    "Primeira Liga",
+    "Premier League",
+    "La Liga",
+    "Serie A"
+  ],
+  "date_range": {
+    "start": "2022-08-05T00:00:00",
+    "end": "2025-05-25T00:00:00"
+  },
+  "target_distribution": {
+    "H": 3143,
+    "A": 2228,
+    "D": 1775
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "total_matches": 7146,
+  "total_features": 65,
+  "feature_categories": {
+    "basic": [
+      "Home_Goals",
+      "Away_Goals",
+      "Total_Goals",
+      "Goal_Difference"
+    ],
+    "team_strength": [
+      "Market_Value_Ratio",
+      "Age_Difference",
+      "Tier_Advantage"
+    ],
+    "uefa": [
+      "UEFA_Coeff_Difference",
+      "UEFA_Quality_Match"
+    ],
+    "form": [
+      "Form_Difference",
+      "Recent_Form_Diff"
+    ],
+    "injuries": [
+      "Injury_Advantage",
+      "Availability_Score"
+    ],
+    "historical": [
+      "H2H_Home_Win_Rate",
+      "H2H_Recent_Form"
+    ],
+    "competition": [
+      "Competition_Weight",
+      "Home_Advantage",
+      "Is_Derby"
+    ],
+    "situational": [
+      "Season_Stage",
+      "Is_European_Competition",
+      "Is_Weekend"
+    ]
+  },
+  "target_distribution": {
+    "H": 3143,
+    "A": 2228,
+    "D": 1775
+  },
+  "leagues": [
+    "Bundesliga",
+    "Ligue 1",
+    "Eredivisie",
+    "Primeira Liga",
+    "Premier League",
+    "La Liga",
+    "Serie A"
+  ],
+  "date_range": {
+    "start": "2022-08-05T00:00:00",
+    "end": "2025-05-25T00:00:00"
+  }
+}

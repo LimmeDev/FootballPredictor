@@ -135,7 +135,12 @@ def load_fivethirtyeight_data() -> Optional[pd.DataFrame]:
     
     if spi_matches_file.exists():
         print("📈 Loading FiveThirtyEight SPI matches...")
-        df_matches = pd.read_csv(spi_matches_file)
+        try:
+            df_matches = pd.read_csv(spi_matches_file)
+        except Exception as e:
+            print(f"⚠️  Error reading SPI matches file: {e}")
+            print("🔄 File may be corrupted, skipping FiveThirtyEight data")
+            return None
         
         # Standardize column names
         df_matches = df_matches.rename(columns={

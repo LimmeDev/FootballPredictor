@@ -244,7 +244,13 @@ def main():
     
     print("[XGBoost Multi-Instance] Preparing data …")
     X = df.drop(columns=["Result", "Date", "HomeTeam", "AwayTeam"], errors="ignore")
-    y = df["Result"].astype(int)
+    # Use encoded result if available, otherwise create it
+    if "Result_Encoded" in df.columns:
+        y = df["Result_Encoded"]
+    else:
+        result_mapping = {'H': 0, 'D': 1, 'A': 2}
+        y = df["Result"].map(result_mapping)
+    y = y.astype(int)
     
     # Handle any categorical features
     for col in X.columns:

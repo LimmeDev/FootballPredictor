@@ -1,0 +1,34 @@
+2025-06-21 21:21:35,507 | INFO | 🚀 TRAINING SESSION STARTED: 5-minute Training Session
+2025-06-21 21:21:35,507 | INFO | 📝 Log file: /home/vboxuser/Downloads/AI/AI/football_ai/training_logs/training_session_20250621_212135.log
+2025-06-21 21:21:35,507 | INFO | 🎯 STREAMLINED MODEL TUNING INITIATED
+2025-06-21 21:21:35,507 | INFO | ⏱️  Target Duration: 5 minutes
+2025-06-21 21:21:35,507 | INFO | 🔥 Intensive hyperparameter optimization mode
+2025-06-21 21:21:35,507 | INFO | 📊 Loading mega features dataset...
+2025-06-21 21:21:35,541 | INFO | ✅ Dataset loaded successfully:
+2025-06-21 21:21:35,541 | INFO |    📈 Matches: 7,146
+2025-06-21 21:21:35,541 | INFO |    🔢 Features: 189
+2025-06-21 21:21:35,542 | INFO |    🎯 Target distribution: {0: 3143, 2: 2228, 1: 1775}
+2025-06-21 21:21:35,542 | INFO | ================================================================================
+2025-06-21 21:21:35,542 | INFO | 📊 PHASE 1/3: QUICK BASELINE MODELS
+2025-06-21 21:21:35,542 | INFO | ⏱️  Elapsed: 0.0 minutes
+2025-06-21 21:21:35,542 | INFO | ================================================================================
+2025-06-21 21:21:35,545 | INFO | ⏳ Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0% | 0/3 baseline models | 0.0min elapsed
+2025-06-21 21:21:35,545 | INFO | 🤖 Training Decision Tree...
+2025-06-21 21:21:35,545 | INFO | ⚙️  Parameters: {'max_depth': 15, 'min_samples_split': 10, 'random_state': 42}
+2025-06-21 21:21:37,136 | INFO | 📊 Decision Tree Results:
+2025-06-21 21:21:37,136 | INFO |    CV Score: 0.6798
+2025-06-21 21:21:37,136 | INFO |    CV Std: 0.0048
+2025-06-21 21:21:37,136 | INFO |    Test Score: 0.6676
+2025-06-21 21:21:37,136 | INFO |    Training time: 1.59s
+2025-06-21 21:21:37,136 | INFO | 🌟 NEW BEST MODEL: Decision Tree with score 0.6676
+2025-06-21 21:21:37,136 | INFO | ⏳ Progress: [██████████░░░░░░░░░░░░░░░░░░░░] 33.3% | 1/3 baseline models | 0.0min elapsed
+2025-06-21 21:21:37,136 | INFO | 🤖 Training Random Forest...
+2025-06-21 21:21:37,136 | INFO | ⚙️  Parameters: {'n_estimators': 100, 'max_depth': 10, 'n_jobs': 8, 'random_state': 42}
+2025-06-21 21:21:38,655 | INFO | 📊 Random Forest Results:
+2025-06-21 21:21:38,655 | INFO |    CV Score: 0.6514
+2025-06-21 21:21:38,655 | INFO |    CV Std: 0.0079
+2025-06-21 21:21:38,655 | INFO |    Test Score: 0.6542
+2025-06-21 21:21:38,655 | INFO |    Training time: 1.52s
+2025-06-21 21:21:38,655 | INFO | ⏳ Progress: [████████████████████░░░░░░░░░░] 66.7% | 2/3 baseline models | 0.1min elapsed
+2025-06-21 21:21:38,655 | INFO | 🤖 Training XGBoost...
+2025-06-21 21:21:38,655 | INFO | ⚙️  Parameters: {'n_estimators': 100, 'max_depth': 6, 'n_jobs': 8, 'random_state': 42, 'eval_metric': 'mlogloss'}
